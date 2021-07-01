@@ -24,7 +24,6 @@
 			e.preventDefault();
 			var newShow = { 
 						thtNo: Number($('#theater').val()),
-						/* cinNo: $('#cinema option').index($("#cinema option:selected")), */
 						cinNo: $('#cinema').val(),
 						movNo: $('#movie').val(),
 						shwDate: $('#date').val(),
