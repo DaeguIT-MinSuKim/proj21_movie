@@ -96,10 +96,9 @@
 	</select>
 
 	<!-- 회원탈퇴 -->
-	<delete id="withdrawal">
+	<delete id="userDelete">
 		delete
 		  from member
 		 where mem_email = #{memEmail} 
-		   and mem_passwd = password(#{memPasswd})
 	</delete>
 </mapper>

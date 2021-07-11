@@ -35,5 +35,5 @@ public interface MemberMapper {
 	// 패스워드 체크
 	public Member readMemberWithIDPW(String memEmail, String memPasswd) throws Exception;
 	// 회원탈퇴
-	public void withdrawal(Member member) throws Exception;
+	public void userDelete(String memEmail) throws Exception;
 }

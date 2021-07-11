@@ -41,11 +41,10 @@ $(function(){
 			}
         	
             <!-- 회원탈퇴 -->
-<%-- 	    	var contextPath = "<%=request.getContextPath()%>";
-            var form = $('#delFrm').val();
+ 	    	var contextPath = "<%=request.getContextPath()%>";
             $.ajax({
-	            url         : "${pageContext.request.contextPath}/passCheck.do",
-	            type        : "POST",
+	            url         : contextPath + "withdrawal",
+	            type        : "get",
 	            contentType : "application/text; charset=utf8",
 	            datatype    : "json",
 	            cache       : false,
@@ -64,7 +63,7 @@ $(function(){
     			error: function(){
     				alert("서버 에러.");
     			}
-        	}); --%>
+        	}); 
    		});
 	});
 });
@@ -91,7 +90,7 @@ $(function(){
 			</div>
 			
 			<!-- 본문 -->
-			<form action="withdrawal" name="delFrm" id="delFrm" method="post">
+			<form action="withdrawal" name="delFrm" id="delFrm" method="get">
 			<div id="mypage-wrap">
 					<h2>회원탈퇴</h2>
 					<div id="textarea">
@@ -114,8 +113,8 @@ $(function(){
  			 			<input type="password" id="confmemPasswd" name="confmemPasswd" placeholder="비밀번호를 한번 더 입력해주세요.">
  			 		</div>
  			 		<div id="button-group">
- 			 			<input class="btn1" type="button" value="취소" id="cancel"  onclick="location.href='secession'" /> 
-						<input class="btn2" type="submit" value="탈퇴" id="delete" />	
+ 			 			<input class="btn1" type="button" value="취소" id="cancel" /> 
+						<input class="btn2" type="submit" value="탈퇴" id="delete" onclick="location.href='proj21_movie/login?memEmail=${member.memEmail}'" />	
  			 		</div>
 				</div>
 			</form>

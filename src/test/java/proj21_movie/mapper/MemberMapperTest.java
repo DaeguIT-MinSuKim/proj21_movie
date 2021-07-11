@@ -67,7 +67,7 @@ public class MemberMapperTest {
 	@Test
 	public void test04insertMember() {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
-		Member newMember = new Member("test4@test.com", "1234", LocalDate.of(2020, 7, 4), "테스트4", "01033430343");
+		Member newMember = new Member("test4@test.com", "1234", LocalDate.of(2020, 7, 4), "테스트4", "010-3343-0343");
 
 		int res = mapper.insertMember(newMember);
 		Assert.assertEquals(1, res);
@@ -79,7 +79,7 @@ public class MemberMapperTest {
 	@Test
 	public void test05updateMember() {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
-		Member newMember = new Member("test4_2@test.com", "1234", LocalDate.of(2020, 6, 22), "테스트4_2", "01022313232");
+		Member newMember = new Member("test4_2@test.com", "1234", LocalDate.of(2020, 6, 22), "테스트4_2", "010-2231-3232");
 		mapper.insertMember(newMember);
 
 		newMember.setMemEmail("test4_2@test.com");
@@ -97,21 +97,33 @@ public class MemberMapperTest {
 	public void test06deleteMember() {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
 
-		Member newMember = new Member("test4_2@test.com", "1122", LocalDate.of(2020, 6, 22), "테스트4_2", "01022313232");
+		Member newMember = new Member("test4_2@test.com", "1122", LocalDate.of(2020, 6, 22), "테스트4_2", "010-2231-3232");
 		mapper.insertMember(newMember);
 
 		newMember.setMemEmail("test4_2@test.com");
 		int res = mapper.deleteMember(newMember.getMemEmail());
 		Assert.assertEquals(1, res);
 	}
-	
+
 	@Test
-	public void test07memberIdChk() throws Exception{
+	public void test07memberIdChk() throws Exception {
 		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
-		
-		String id = "test1@test.com";	// 존재하는 아이디
-		String id2 = "test123";	// 존재하지 않는 아이디
+
+		String id = "test1@test.com"; // 존재하는 아이디
+		String id2 = "test123"; // 존재하지 않는 아이디
 		mapper.idCheck(id);
 		mapper.idCheck(id2);
+	}
+
+	@Test
+	public void test08DeleteTest() {
+		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName() + "()");
+		
+		String memEmail = "test5@test.com";
+		int result = mapper.deleteMember(memEmail);
+
+		if (result == 1) {
+			System.out.println("삭제 성공");
+		}
 	}
 }

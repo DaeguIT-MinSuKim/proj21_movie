@@ -109,11 +109,10 @@ public class MemberServiceImpl implements MemberService {
 
 	// 회원 탈퇴
 	@Override
-	public void withdrawal(Member member) throws Exception {
-		try {
-			mapper.withdrawal(member);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public void userDelete(String memEmail, HttpSession session) throws Exception {
+		log.debug("service - userDelete() > " + memEmail);
+		session.invalidate(); 
+		mapper.deleteMember(memEmail);
+		mapper.userDelete(memEmail);
 	}
 }
