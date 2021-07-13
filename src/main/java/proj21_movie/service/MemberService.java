@@ -40,8 +40,7 @@ public interface MemberService {
 	// 패스워드 변경
 	public int pwUpdate_M(Member member);
 
-	/////////////////
-
+	// 회원탈퇴
 	public boolean withdrawal(Member member, HttpServletResponse response) throws Exception;
 	public boolean checkPw(String memEmail, String memPasswd);
 

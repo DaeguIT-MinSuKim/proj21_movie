@@ -32,14 +32,14 @@ public class WithdrawalController {
 		return "mypage/withdrawalsuccess";
 	}
 
-	// 삭제구현
+	// 삭제구현(성공)
 	@RequestMapping(value = "withdrawal.do", method = RequestMethod.POST)
 	public String withdrawal_form(@ModelAttribute Member member, HttpSession session, HttpServletResponse response) throws Exception{
 		if(service.withdrawal(member, response)) {
 			session.invalidate();
 		}
 		
-		return "redirect:/main";
+		return "redirect:/withdrawalsuccess";
 	}
 
 }

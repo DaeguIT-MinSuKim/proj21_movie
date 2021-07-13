@@ -95,6 +95,7 @@ public class MemberServiceImpl implements MemberService {
 		return mapper.pwUpdate_M(member);
 	}
 
+	// 회원탈퇴
 	@Override
 	public boolean checkPw(String memEmail, String memPasswd) {
 		log.debug("service - checkPw() > " + memEmail);

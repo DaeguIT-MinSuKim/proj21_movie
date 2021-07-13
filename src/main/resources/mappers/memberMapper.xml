@@ -89,7 +89,7 @@
 		 where mem_email = #{memEmail}
 	</update>
 	
-	<!-- 회원정보 수정 -->
+	<!-- 회원정보 삭제 -->
   	<delete id="withdrawal" parameterType="member">
         DELETE 
           FROM member
