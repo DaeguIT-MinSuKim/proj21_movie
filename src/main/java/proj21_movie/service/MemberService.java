@@ -43,7 +43,6 @@ public interface MemberService {
 	/////////////////
 
 	public boolean withdrawal(Member member, HttpServletResponse response) throws Exception;
-
 	public boolean checkPw(String memEmail, String memPasswd);
 
 }

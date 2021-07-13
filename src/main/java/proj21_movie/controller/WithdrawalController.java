@@ -40,5 +40,4 @@ public class WithdrawalController {
 		}
 		return "redirect:/main";
 	}
-
 }
