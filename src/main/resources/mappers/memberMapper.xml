@@ -90,22 +90,19 @@
 	</update>
 	
 	<!-- 회원정보 수정 -->
-	<update id="update">
-		update member
-		   set mem_no = #{memNo},
-		   	   mem_passwd = password(#{memPasswd}),
-		       mem_birthdate = #{memBirthdate},
-		       mem_name = #{memName},
-		       mem_phone = #{memPhone}
-		 where mem_email = #{memEmail}
-	</update>
+  	<delete id="withdrawal" parameterType="member">
+        DELETE 
+          FROM member
+         WHERE mem_email = #{memEmail}
+           and mem_passwd = password(#{memPasswd})
+    </delete>
 	
 	<!-- 회원정보 비밀번호 체크 -->
-	<select id="checkPw" parameterType="Member">
-		select mem_no, mem_email, password(mem_passwd), mem_birthdate, mem_name, mem_phone
-		  from member
-		 where mem_email = #{memEmail} 
-		   and mem_passwd = #{memPasswd}
+    <select id="checkPw" resultType="int">
+        SELECT COUNT(*) 
+          FROM member
+         WHERE mem_email = #{memEmail} 
+           AND mem_passwd = password(#{memPasswd})
     </select>
 	
 </mapper>

@@ -42,6 +42,12 @@ $(function(){
 			}        	
         }); 
 	});
+	
+    if($("#delform").submit(function(){
+    	if(!confirm("탈퇴하시겠습니까?")) {
+    		return false;
+    	}
+    })); 
 });
 </script>
 </head>
@@ -66,7 +72,7 @@ $(function(){
 			</div>
 			
 			<!-- 본문 -->
-			<form action="withdrawalsuccess.set" method="post">
+			<form action="withdrawal.do" name="delform" method="post">
 			<div id="mypage-wrap">
 					<h2>회원탈퇴</h2>
 					<div id="textarea">

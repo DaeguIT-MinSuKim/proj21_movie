@@ -1,12 +1,8 @@
 package proj21_movie.mapper;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.springframework.stereotype.Component;
 import proj21_movie.dto.Member;
-import proj21_movie.dto.Withdrawal;
 
 @Component
 public interface MemberMapper {
@@ -35,9 +31,6 @@ public interface MemberMapper {
 	
 	
 	//////////////////////
-	// 패스워드 체크
-	public Member checkPw(Member member) throws Exception;
-	
-	// 회원수정
-	public void update(Member member) throws Exception;
+	public int withdrawal(Member member) throws Exception;
+	public boolean checkPw(String memEmail, String memPasswd);
 }

@@ -30,14 +30,4 @@ public class MyPageController {
 	public String myInfo() {
 		return "mypage/myinfo";
 	}
-	
-	@RequestMapping("/withdrawal")
-	public String withdrawal() {
-		return "mypage/withdrawal";
-	}
-	
-	@RequestMapping("/withdrawalsuccess")
-	public String chkPassword() {
-		return "mypage/withdrawalsuccess";
-	}
 }
