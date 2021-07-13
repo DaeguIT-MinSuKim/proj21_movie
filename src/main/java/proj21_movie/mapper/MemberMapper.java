@@ -29,7 +29,6 @@ public interface MemberMapper {
 	// 패스워드 변경
 	public int pwUpdate_M(Member member);
 	
-	
 	//////////////////////
 	public int withdrawal(Member member) throws Exception;
 	public boolean checkPw(String memEmail, String memPasswd);

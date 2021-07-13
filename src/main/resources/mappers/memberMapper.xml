@@ -104,5 +104,5 @@
          WHERE mem_email = #{memEmail} 
            AND mem_passwd = password(#{memPasswd})
     </select>
-	
+
 </mapper>

@@ -38,6 +38,7 @@ public class WithdrawalController {
 		if(service.withdrawal(member, response)) {
 			session.invalidate();
 		}
+		
 		return "redirect:/main";
 	}
 
